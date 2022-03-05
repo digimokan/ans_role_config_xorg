@@ -1,0 +1,7 @@
+- name: "Install 'xorg-server' display server package"
+  ansible.builtin.package:
+    name: xorg-server
+    state: present
+  become: true
+  become_user: root
+
