@@ -33,7 +33,7 @@ Install the base, minimal Xorg display server.
    - src: https://github.com/digimokan/ans_role_config_xorg
    ```
 
-2. Invoke explicitly in a task in parent role:
+2. Invoke explicitly from a task in parent role:
 
    ```yaml
    - name: "Install and configure Xorg"
