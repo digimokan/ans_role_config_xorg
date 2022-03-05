@@ -33,6 +33,14 @@ Install the base, minimal Xorg display server.
    - src: https://github.com/digimokan/ans_role_config_xorg
    ```
 
+2. Invoke explicitly in a task in parent role:
+
+   ```yaml
+   - name: "Install and configure Xorg"
+     ansible.builtin.include_role:
+       name: ans_role_config_xorg
+   ```
+
 ## Contributing
 
 * Feel free to report a bug or propose a feature by opening a new
