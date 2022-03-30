@@ -13,15 +13,11 @@
 
 # read system .Xresources file, and keep existing old resources
 
-if [ -f "{{ system_xresources_path }}" ]; then
-  xrdb -merge "{{ system_xresources_path }}"
-fi
+[ -f "{{ system_xresources_path }}" ] && xrdb -merge "{{ system_xresources_path }}"
 
 # read user's .Xresources file, and keep existing old resources
 
-if [ -f "{{ user_xresources_path }}" ]; then
-  xrdb -merge "{{ user_xresources_path }}"
-fi
+[ -f "{{ user_xresources_path }}" ] && xrdb -merge "{{ user_xresources_path }}"
 
 ################################################################################
 # Load Keyboard Modifier Maps
@@ -29,15 +25,11 @@ fi
 
 # read system keyboard modifier map and system keymap table
 
-if [ -f "{{ system_xmodmap_path }}" ]; then
-  xmodmap "{{ system_xmodmap_path }}"
-fi
+[ -f "{{ system_xmodmap_path }}" ] && xmodmap "{{ system_xmodmap_path }}"
 
 # read user's keyboard modifier map
 
-if [ -f "{{ user_xmodmap_path }}" ]; then
-  xmodmap "{{ user_xmodmap_path }}"
-fi
+[ -f "{{ user_xmodmap_path }}" ] && xmodmap "{{ user_xmodmap_path }}"
 
 ################################################################################
 # Run Xinitrc Scripts: Tasks That Depend On Xorg
