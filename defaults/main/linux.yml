@@ -1,0 +1,12 @@
+# system Xresources file path
+linux_system_xresources_path: '/etc/X11/xinit/.Xresources'
+
+# system Xmodmap file path
+linux_system_xmodmap_path: '/etc/X11/xinit/.Xmodmap'
+
+# system xinitrc.d scripts directory
+linux_system_xinitrc_d_dir: '/etc/X11/xinit/xinitrc.d'
+
+# system Xprofile file path
+linux_system_xprofile_path: '/etc/xprofile'
+

@@ -1,0 +1,20 @@
+# Launch a custom DE/WM with 'startx' command, via user's .xinitrc
+#   If empty string, then user's .xinitrc will not be created
+#   If not empty, then string is DE/WM to start with exec cmd (e.g. 'i3')
+exec_de_from_user_xinitrc: ''
+
+# user .xinitrc path
+user_xinitrc_path: "/home/{{ user_name }}/.xinitrc"
+
+# user .Xresources path (Xorg DB Items loaded by user .xinitrc, on startup)
+user_xresources_path: "/home/{{ user_name }}/.Xresources"
+
+# user Xmodmap file path (Keyboard Modifiers and Keymaps)
+user_xmodmap_path: "/home/{{ user_name }}/.Xmodmap"
+
+# user .xinitrc.d scripts dir (X-dependent scripts run by user .xinitrc, on startup)
+user_xinitrc_d_dir: "/home/{{ user_name }}/.xinitrc.d"
+
+# user .xprofile path (general tasks to execute before GUI desktop started)
+user_xprofile_path: "/home/{{ user_name }}/.xprofile"
+

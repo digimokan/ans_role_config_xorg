@@ -59,6 +59,10 @@ Install the base, minimal Xorg display server.
 
 ## Role Options
 
+See the role `defaults` files for main role vars listings:
+
+  * [defaults](../defaults/main/)
+
 Define these _required_ vars for the role:
 
   * `user_name`: name of primary i3wm user to configure the desktop for

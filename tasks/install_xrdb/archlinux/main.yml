@@ -1,0 +1,7 @@
+- name: "Install 'xorg-xrdb' package"
+  ansible.builtin.package:
+    name: xorg-xrdb
+    state: present
+  become: true
+  become_user: root
+

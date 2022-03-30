@@ -1,0 +1,87 @@
+#!/bin/sh
+
+# ANSIBLE-MANAGED CONFIGURATION FILE
+# NOTES:
+#   - When present, this user ~/.xinitrc is sourced INSTEAD OF system xinitrc.
+#   - This script may be sourced by invoking startx at the command line.
+# REFS:
+#   - See https://www.freebsd.org/cgi/man.cgi?query=startx
+
+################################################################################
+# Load Xresources: Xorg Database Items Used By Misc Programs
+################################################################################
+
+# read system .Xresources file, and keep existing old resources
+
+if [ -f "{{ system_xresources_path }}" ]; then
+  xrdb -merge "{{ system_xresources_path }}"
+fi
+
+# read user's .Xresources file, and keep existing old resources
+
+if [ -f "{{ user_xresources_path }}" ]; then
+  xrdb -merge "{{ user_xresources_path }}"
+fi
+
+################################################################################
+# Load Keyboard Modifier Maps
+################################################################################
+
+# read system keyboard modifier map and system keymap table
+
+if [ -f "{{ system_xmodmap_path }}" ]; then
+  xmodmap "{{ system_xmodmap_path }}"
+fi
+
+# read user's keyboard modifier map
+
+if [ -f "{{ user_xmodmap_path }}" ]; then
+  xmodmap "{{ user_xmodmap_path }}"
+fi
+
+################################################################################
+# Run Xinitrc Scripts: Tasks That Depend On Xorg
+################################################################################
+
+# run any system scripts in system xinitrc.d dir
+
+if [ -d "{{ system_xinitrc_d_dir }}" ]; then
+  for script_file in "{{ system_xinitrc_d_dir }}"/?*.sh ; do
+    # shellcheck source=/dev/null
+    [ -x "$script_file" ] && . "$script_file"
+  done
+  unset script_file
+fi
+
+# run any user scripts in user xinitrc.d dir
+
+if [ -d "{{ user_xinitrc_d_dir }}" ]; then
+  for script_file in "{{ user_xinitrc_d_dir }}"/?*.sh ; do
+    # shellcheck source=/dev/null
+    [ -x "$script_file" ] && . "$script_file"
+  done
+  unset script_file
+fi
+
+################################################################################
+# Run Xprofile Commands: General Tasks To Execute Before GUI Starts
+################################################################################
+
+# run system Xprofile commands
+
+# shellcheck source=/dev/null
+[ -f "{{ system_xprofile_path }}" ] && . "{{ system_xprofile_path }}"
+
+# run user Xprofile commands
+
+# shellcheck source=/dev/null
+[ -f "{{ user_xprofile_path }}" ] && . "{{ user_xprofile_path }}"
+
+################################################################################
+# Exec Target Graphical Desktop
+################################################################################
+
+exec "{{ exec_de_from_user_xinitrc }}"
+
+# vim: set filetype=sh:
+

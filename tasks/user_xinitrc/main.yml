@@ -1,0 +1,10 @@
+- name: "Add custom .xinitrc at '{{ user_xinitrc_path }}'"
+  ansible.builtin.template:
+    dest: "{{ user_xinitrc_path }}"
+    src: 'xinitrc.j2'
+    owner: "{{ user_name }}"
+    mode: '755'
+    force: yes
+  become: true
+  become_user: root
+
