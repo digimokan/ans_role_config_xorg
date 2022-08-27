@@ -1,4 +1,5 @@
-# create user .xserverrc, .xinitrc, .Xresources, .Xmodmap, .xinitrc.d/, .xprofile
+# create user .xserverrc and .xinitrc files
+# NOTE: user .xinitrc sources user .Xresources, .Xmodmap, .xinitrc.d/, .xprofile
 create_user_xorg_files: false
 
 # Launch a custom DE/WM, via user's .xinitrc
