@@ -73,7 +73,7 @@ fi
 # Exec Target Graphical Desktop
 ################################################################################
 
-exec "{{ xinitrc_options.exec_de if (xinitrc_options.exec_de) else 'true' }}"
+exec "{{ xinitrc_opts_exec_de if (xinitrc_opts_exec_de) else 'true' }}"
 
 # vim: set filetype=sh:
 

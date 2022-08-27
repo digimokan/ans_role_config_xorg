@@ -2,23 +2,22 @@
 # NOTE: user .xinitrc sources user .Xresources, .Xmodmap, .xinitrc.d/, .xprofile
 create_user_xinitrc: false
 
-# set these options, if user xinitrc is created
-xinitrc_options:
-  # Launch a custom DE/WM, via user's .xinitrc
-  #   exec string is DE/WM (e.g. 'i3') to start with 'startx' cmd, or '' for none
-  exec_de: ''
+# Launch a custom DE/WM, via user's .xinitrc
+#   exec string is DE/WM (e.g. 'i3') to start with 'startx' cmd, or '' for none
+xinitrc_opts_exec_de: ''
 
 # create user .xserverrc file
 create_user_xserverrc: false
 
-# set these options, if user xserverrc is created
-xserverrc_options:
-  # delay of starting key-repeat on holding down key, in milliseconds
-  key_repeat_delay_ms: '350'
-  # key repeat rate, in milliseconds
-  key_repeat_rate_ms: '25'
-  # start screen saver after this number of minutes
-  screen_saver_delay_minutes: '10'
-  # turn monitor off instead of showing screen saver
-  screen_saver_monitor_off: true
+# delay of starting key-repeat on holding down key, in milliseconds
+xserverrc_opts_key_repeat_delay_ms: '350'
+
+# key repeat rate, in milliseconds
+xserverrc_opts_key_repeat_rate_ms: '25'
+
+# start screen saver after this number of minutes
+xserverrc_opts_screen_saver_delay_minutes: '10'
+
+# turn monitor off instead of showing screen saver
+xserverrc_opts_screen_saver_monitor_off: true
 
