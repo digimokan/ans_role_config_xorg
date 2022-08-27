@@ -1,3 +1,6 @@
+# system xserver file path
+linux_system_xserver_path: '/usr/bin/X'
+
 # system Xresources file path
 linux_system_xresources_path: '/etc/X11/xinit/.Xresources'
 

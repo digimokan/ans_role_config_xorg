@@ -7,6 +7,9 @@
 - name: "Install xmodmap packages required for custom user .xinitrc"
   ansible.builtin.include_tasks: install_xmodmap/main.yml
 
-- name: "Configure custom .xinitrc for user '{{ user_name }}', for launching DE/WM"
+- name: "Configure custom .xinitrc for user '{{ user_name }}'"
   ansible.builtin.include_tasks: user_xinitrc/main.yml
+
+- name: "Configure custom .xserverrc for user '{{ user_name }}'"
+  ansible.builtin.include_tasks: user_xserverrc/main.yml
 

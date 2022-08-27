@@ -1,23 +1,24 @@
-# create user .xserverrc and .xinitrc files
+# create user .xinitrc file
 # NOTE: user .xinitrc sources user .Xresources, .Xmodmap, .xinitrc.d/, .xprofile
-create_user_xorg_files: false
+create_user_xinitrc: false
 
-# Launch a custom DE/WM, via user's .xinitrc
-#   exec string is DE/WM (e.g. 'exec "i3"') to start with 'startx' cmd, or '' for none
-exec_de_from_user_xinitrc: ''
+# set these options, if user xinitrc is created
+xinitrc_options:
+  # Launch a custom DE/WM, via user's .xinitrc
+  #   exec string is DE/WM (e.g. 'i3') to start with 'startx' cmd, or '' for none
+  exec_de: ''
 
-# user .xinitrc path
-user_xinitrc_path: "/home/{{ user_name }}/.xinitrc"
+# create user .xserverrc file
+create_user_xserverrc: false
 
-# user .Xresources path (Xorg DB Items loaded by user .xinitrc, on startup)
-user_xresources_path: "/home/{{ user_name }}/.Xresources"
-
-# user Xmodmap file path (Keyboard Modifiers and Keymaps)
-user_xmodmap_path: "/home/{{ user_name }}/.Xmodmap"
-
-# user .xinitrc.d scripts dir (X-dependent scripts run by user .xinitrc, on startup)
-user_xinitrc_d_dir: "/home/{{ user_name }}/.xinitrc.d"
-
-# user .xprofile path (general tasks to execute before GUI desktop started)
-user_xprofile_path: "/home/{{ user_name }}/.xprofile"
+# set these options, if user xserverrc is created
+xserverrc_options:
+  # delay of starting key-repeat on holding down key, in milliseconds
+  key_repeat_delay_ms: '350'
+  # key repeat rate, in milliseconds
+  key_repeat_rate_ms: '25'
+  # start screen saver after this number of minutes
+  screen_saver_delay_minutes: '10'
+  # turn monitor off instead of showing screen saver
+  screen_saver_monitor_off: true
 

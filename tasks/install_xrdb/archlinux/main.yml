@@ -1,7 +1,7 @@
 - name: "Install 'xorg-xrdb' package"
   ansible.builtin.package:
     name: xorg-xrdb
-    state: "{{ 'present' if create_user_xorg_files else 'absent' }}"
+    state: "{{ 'present' if create_user_xinitrc else 'absent' }}"
   become: true
   become_user: root
 

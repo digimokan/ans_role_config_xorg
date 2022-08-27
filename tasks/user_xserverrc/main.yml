@@ -1,0 +1,19 @@
+- name: "Add custom .xserverrc at '{{ user_xserverrc_path }}'"
+  ansible.builtin.template:
+    dest: "{{ user_xserverrc_path }}"
+    src: 'xserverrc.j2'
+    owner: "{{ user_name }}"
+    mode: '755'
+    force: yes
+  become: true
+  become_user: root
+  when: create_user_xserverrc
+
+- name: "Remove any existing custom .xserverrc at '{{ user_xserverrc_path }}'"
+  ansible.builtin.file:
+    path: "{{ user_xserverrc_path }}"
+    state: absent
+  become: true
+  become_user: root
+  when: not create_user_xserverrc
+

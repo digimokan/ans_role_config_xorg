@@ -1,7 +1,7 @@
 - name: "Install 'xorg-xmodmap' package"
   ansible.builtin.package:
     name: xorg-xmodmap
-    state: "{{ 'present' if create_user_xorg_files else 'absent' }}"
+    state: "{{ 'present' if create_user_xinitrc else 'absent' }}"
   become: true
   become_user: root
 
