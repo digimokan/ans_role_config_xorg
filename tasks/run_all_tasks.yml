@@ -3,13 +3,10 @@
 
 - name: "Install xrdb packages required for custom user .xinitrc"
   ansible.builtin.include_tasks: install_xrdb/main.yml
-  when: (exec_de_from_user_xinitrc)
 
 - name: "Install xmodmap packages required for custom user .xinitrc"
   ansible.builtin.include_tasks: install_xmodmap/main.yml
-  when: (exec_de_from_user_xinitrc)
 
 - name: "Configure custom .xinitrc for user '{{ user_name }}', for launching DE/WM"
   ansible.builtin.include_tasks: user_xinitrc/main.yml
-  when: (exec_de_from_user_xinitrc)
 

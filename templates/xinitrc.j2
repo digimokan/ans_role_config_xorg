@@ -73,7 +73,7 @@ fi
 # Exec Target Graphical Desktop
 ################################################################################
 
-exec "{{ exec_de_from_user_xinitrc }}"
+exec "{{ exec_de_from_user_xinitrc if (exec_de_from_user_xinitrc) else 'true' }}"
 
 # vim: set filetype=sh:
 

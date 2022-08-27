@@ -7,4 +7,13 @@
     force: yes
   become: true
   become_user: root
+  when: create_user_xorg_files
+
+- name: "Remove any existing custom .xinitrc at '{{ user_xinitrc_path }}'"
+  ansible.builtin.file:
+    path: "{{ user_xinitrc_path }}"
+    state: absent
+  become: true
+  become_user: root
+  when: not create_user_xorg_files
 

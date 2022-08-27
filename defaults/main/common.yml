@@ -1,6 +1,8 @@
-# Launch a custom DE/WM with 'startx' command, via user's .xinitrc
-#   If empty string, then user's .xinitrc will not be created
-#   If not empty, then string is DE/WM to start with exec cmd (e.g. 'i3')
+# create user .xserverrc, .xinitrc, .Xresources, .Xmodmap, .xinitrc.d/, .xprofile
+create_user_xorg_files: false
+
+# Launch a custom DE/WM, via user's .xinitrc
+#   exec string is DE/WM (e.g. 'exec "i3"') to start with 'startx' cmd, or '' for none
 exec_de_from_user_xinitrc: ''
 
 # user .xinitrc path
