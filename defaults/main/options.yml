@@ -6,9 +6,6 @@ create_user_xinitrc: false
 #   exec string is DE/WM (e.g. 'i3') to start with 'startx' cmd, or '' for none
 xinitrc_opts_exec_de: ''
 
-# create user .xserverrc file
-create_user_xserverrc: false
-
 # key-repeat delay on holding down key (mS), and repeat rate (Hz)
 # e.g. specify '350 25' for 350 mS and 25 Hz
 # use '' to leave unset, and let DE/WM configure these settings

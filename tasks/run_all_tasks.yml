@@ -13,6 +13,3 @@
 - name: "Configure xorg.conf.d key repeat-delay/repeat-rate"
   ansible.builtin.include_tasks: key_repeat/main.yml
 
-# - name: "Configure custom .xserverrc for user '{{ user_name }}'"
-#   ansible.builtin.include_tasks: user_xserverrc/main.yml
-
