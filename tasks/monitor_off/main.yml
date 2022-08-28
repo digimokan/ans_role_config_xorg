@@ -1,0 +1,23 @@
+- name: "Add monitor-off settings in '{{ monitor_off_conf_path }}'"
+  ansible.builtin.template:
+    dest: "{{ monitor_off_conf_path }}"
+    src: 'monitor_off.j2'
+    owner: 'root'
+    mode: '644'
+    force: yes
+  become: true
+  become_user: root
+  vars:
+    monitor_off_conf_path: "{{ system_xorg_conf_dir }}/{{ xorg_conf_monitor_off_file_name }}"
+  when: (xorg_monitor_off_minutes)
+
+- name: "Remove any system monitor-off settings in '{{ monitor_off_conf_path }}'"
+  ansible.builtin.file:
+    path: "{{ monitor_off_conf_path }}"
+    state: absent
+  become: true
+  become_user: root
+  vars:
+    monitor_off_conf_path: "{{ system_xorg_conf_dir }}/{{ xorg_conf_monitor_off_file_name }}"
+  when: not (xorg_monitor_off_minutes)
+

@@ -10,6 +10,9 @@
 - name: "Configure custom .xinitrc for user '{{ user_name }}'"
   ansible.builtin.include_tasks: user_xinitrc/main.yml
 
-- name: "Configure xorg.conf.d key repeat-delay/repeat-rate"
+- name: "Configure xorg.conf.d key-repeat settings"
   ansible.builtin.include_tasks: key_repeat/main.yml
+
+- name: "Configure xorg.conf.d key monitor-off settings"
+  ansible.builtin.include_tasks: monitor_off/main.yml
 

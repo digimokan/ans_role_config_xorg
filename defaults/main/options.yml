@@ -11,9 +11,7 @@ xinitrc_opts_exec_de: ''
 # use '' to leave unset, and let DE/WM configure these settings
 xorg_key_repeat_delay_ms_rate_hz: ''
 
-# start screen saver after this number of minutes
-xserverrc_opts_screen_saver_delay_minutes: '10'
-
-# turn monitor off instead of showing screen saver
-xserverrc_opts_screen_saver_monitor_off: true
+# turn monitor off (or blank) after this number of minutes
+# use '' to leave unset, and let DE/WM configure these settings
+xorg_monitor_off_minutes: ''
 

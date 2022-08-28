@@ -1,0 +1,14 @@
+# ANSIBLE-MANAGED CONFIGURATION FILE
+# REFS:
+#   - https://wiki.archlinux.org/title/Display_Power_Management_Signaling#Setting_up_DPMS_in_X
+#   - https://www.x.org/releases/current/doc/man/man5/xorg.conf.5.xhtml#heading5
+#   - https://wiki.archlinux.org/title/Xorg/Keyboard_configuration#Using_X_configuration_files
+
+Section "ServerFlags"
+  Identifier "monitor-off"
+  Option "BlankTime" "{{ xorg_monitor_off_minutes }}"
+  Option "OffTime" "{{ xorg_monitor_off_minutes }}"
+EndSection
+
+# vim: set filetype=conf:
+
