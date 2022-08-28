@@ -4,6 +4,11 @@
 #   - https://www.x.org/releases/current/doc/man/man5/xorg.conf.5.xhtml#heading5
 #   - https://wiki.archlinux.org/title/Xorg/Keyboard_configuration#Using_X_configuration_files
 
+Section "Monitor"
+  Identifier "default-monitor"
+  Option "DPMS" "true"
+EndSection
+
 Section "ServerFlags"
   Option "BlankTime" "{{ xorg_monitor_off_minutes }}"
   Option "OffTime" "{{ xorg_monitor_off_minutes }}"
