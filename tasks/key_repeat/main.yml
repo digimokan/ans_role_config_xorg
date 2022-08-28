@@ -1,0 +1,23 @@
+- name: "Add system key-repeat settings in '{{ key_repeat_conf_path }}'"
+  ansible.builtin.template:
+    dest: "{{ key_repeat_conf_path }}"
+    src: 'key_repeat.j2'
+    owner: 'root'
+    mode: '644'
+    force: yes
+  become: true
+  become_user: root
+  vars:
+    key_repeat_conf_path: "{{ system_xorg_conf_dir }}/{{ xorg_conf_key_repeat_file_name }}"
+  when: (xorg_key_repeat_delay_ms_rate_hz)
+
+- name: "Remove any system key-repeat settings in '{{ key_repeat_conf_path }}'"
+  ansible.builtin.file:
+    path: "{{ key_repeat_conf_path }}"
+    state: absent
+  become: true
+  become_user: root
+  vars:
+    key_repeat_conf_path: "{{ system_xorg_conf_dir }}/{{ xorg_conf_key_repeat_file_name }}"
+  when: not (xorg_key_repeat_delay_ms_rate_hz)
+

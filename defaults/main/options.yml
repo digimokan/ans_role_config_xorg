@@ -9,11 +9,10 @@ xinitrc_opts_exec_de: ''
 # create user .xserverrc file
 create_user_xserverrc: false
 
-# delay of starting key-repeat on holding down key, in milliseconds
-xserverrc_opts_key_repeat_delay_ms: '350'
-
-# key repeat rate, in milliseconds
-xserverrc_opts_key_repeat_rate_ms: '25'
+# key-repeat delay on holding down key (mS), and repeat rate (Hz)
+# e.g. specify '350 25' for 350 mS and 25 Hz
+# use '' to leave unset, and let DE/WM configure these settings
+xorg_key_repeat_delay_ms_rate_hz: ''
 
 # start screen saver after this number of minutes
 xserverrc_opts_screen_saver_delay_minutes: '10'

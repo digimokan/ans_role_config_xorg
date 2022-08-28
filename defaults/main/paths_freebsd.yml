@@ -13,3 +13,6 @@ freebsd_system_xinitrc_d_dir: '/usr/local/etc/X11/xinit/xinitrc.d'
 # system Xprofile file path
 freebsd_system_xprofile_path: '/usr/local/etc/xprofile'
 
+# system xorg.conf dir
+freebsd_system_xorg_conf_dir: '/usr/local/etc/X11/xorg.conf.d'
+

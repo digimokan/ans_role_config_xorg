@@ -1,0 +1,12 @@
+# ANSIBLE-MANAGED CONFIGURATION FILE
+# NOTES:
+#   - These settings may be more robust than specifying repeat via xset cmd.
+# REFS:
+#   - https://wiki.archlinux.org/title/Xorg/Keyboard_configuration#Adjusting_typematic_delay_and_rate
+
+Section "InputClass"
+        Option "AutoRepeat" "{{ xorg_key_repeat_delay_ms_rate_hz }}"
+EndSection
+
+# vim: set filetype=conf:
+

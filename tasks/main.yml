@@ -6,6 +6,7 @@
     system_xmodmap_path: "{{ linux_system_xmodmap_path }}"
     system_xinitrc_d_dir: "{{ linux_system_xinitrc_d_dir }}"
     system_xprofile_path: "{{ linux_system_xprofile_path }}"
+    system_xorg_conf_dir: "{{ linux_system_xorg_conf_dir }}"
   when: ansible_system == "Linux"
 
 - name: "Run all role tasks for FreeBSD"
@@ -16,5 +17,6 @@
     system_xmodmap_path: "{{ freebsd_system_xmodmap_path }}"
     system_xinitrc_d_dir: "{{ freebsd_system_xinitrc_d_dir }}"
     system_xprofile_path: "{{ freebsd_system_xprofile_path }}"
+    system_xorg_conf_dir: "{{ freebsd_system_xorg_conf_dir }}"
   when: ansible_os_family == "FreeBSD"
 
