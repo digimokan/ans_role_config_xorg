@@ -5,7 +5,6 @@
 #   - https://wiki.archlinux.org/title/Xorg/Keyboard_configuration#Using_X_configuration_files
 
 Section "ServerFlags"
-  Identifier "monitor-off"
   Option "BlankTime" "{{ xorg_monitor_off_minutes }}"
   Option "OffTime" "{{ xorg_monitor_off_minutes }}"
 EndSection
