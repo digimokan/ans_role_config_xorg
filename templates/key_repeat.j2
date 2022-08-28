@@ -5,6 +5,7 @@
 #   - https://wiki.archlinux.org/title/Xorg/Keyboard_configuration#Adjusting_typematic_delay_and_rate
 
 Section "InputClass"
+        Identifier "system-keyboard"
         Option "AutoRepeat" "{{ xorg_key_repeat_delay_ms_rate_hz }}"
 EndSection
 
