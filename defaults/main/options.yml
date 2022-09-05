@@ -11,7 +11,3 @@ xinitrc_opts_exec_de: ''
 # use '' to leave unset, and let DE/WM configure these settings
 xorg_key_repeat_delay_ms_rate_hz: ''
 
-# turn monitor off (or blank) after this number of minutes
-# use '' to leave unset, and let DE/WM configure these settings
-xorg_monitor_off_minutes: ''
-
