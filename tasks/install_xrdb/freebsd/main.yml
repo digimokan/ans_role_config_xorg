@@ -1,7 +1,7 @@
 - name: "Install 'xrdb' package"
   ansible.builtin.package:
     name: xrdb
-    state: "{{ 'present' if create_user_xinitrc else 'absent' }}"
+    state: present
   become: true
   become_user: root
 
