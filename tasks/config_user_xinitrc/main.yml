@@ -7,7 +7,7 @@
     force: true
   become: true
   become_user: root
-  when: create_user_xinitrc
+  when: create_user_xinitrc_and_xsession
 
 - name: "Remove any existing custom .xinitrc at '{{ user_xinitrc_path }}'"
   ansible.builtin.file:
@@ -15,5 +15,25 @@
     state: absent
   become: true
   become_user: root
-  when: not create_user_xinitrc
+  when: not create_user_xinitrc_and_xsession
+
+- name: "Create '{{ user_xinitrc_path }}' as symlink to '{{ user_xsession_path }}'"
+  ansible.builtin.file:
+    src: "{{ user_xinitrc_path }}"
+    dest: "{{ user_xsession_path }}"
+    owner: "{{ user_name }}"
+    mode: '755'
+    state: link
+    force: true
+  become: true
+  become_user: root
+  when: create_user_xinitrc_and_xsession
+
+- name: "Remove any existing custom .xsession at '{{ user_xsession_path }}'"
+  ansible.builtin.file:
+    path: "{{ user_xsession_path }}"
+    state: absent
+  become: true
+  become_user: root
+  when: not create_user_xinitrc_and_xsession
 

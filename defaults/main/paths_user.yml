@@ -1,6 +1,9 @@
 # user .xinitrc path
 user_xinitrc_path: "/home/{{ user_name }}/.xinitrc"
 
+# user .xsession path
+user_xsession_path: "/home/{{ user_name }}/.xsession"
+
 # user .Xresources path (Xorg DB Items loaded by user .xinitrc, on startup)
 user_xresources_path: "/home/{{ user_name }}/.Xresources"
 

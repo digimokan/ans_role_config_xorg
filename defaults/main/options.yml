@@ -1,9 +1,9 @@
-# create user .xinitrc file
+# create user .xinitrc file, and symlink user .xsession to it
 # NOTE: user .xinitrc sources user .Xresources, .Xmodmap, .xinitrc.d/, .xprofile
-create_user_xinitrc: false
+create_user_xinitrc_and_xsession: false
 
-# Launch a custom DE/WM, via user's .xinitrc
-#   exec string is DE/WM (e.g. 'i3') to start with 'startx' cmd, or '' for none
+# launch a custom DE/WM in user's .xinitrc (or empty string, for none)
+#   exec string is DE/WM executable name (e.g. 'i3')
 xinitrc_opts_exec_de: ''
 
 # key-repeat delay on holding down key (mS), and repeat rate (Hz)

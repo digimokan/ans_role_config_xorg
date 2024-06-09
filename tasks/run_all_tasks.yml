@@ -3,11 +3,11 @@
 
 - name: "Install xrdb packages required for custom user .xinitrc"
   ansible.builtin.include_tasks: install_xrdb/main.yml
-  when: create_user_xinitrc
+  when: create_user_xinitrc_and_xsession
 
 - name: "Install xmodmap packages required for custom user .xinitrc"
   ansible.builtin.include_tasks: install_xmodmap/main.yml
-  when: create_user_xinitrc
+  when: create_user_xinitrc_and_xsession
 
 - name: "Configure custom .xinitrc for user '{{ user_name }}'"
   ansible.builtin.include_tasks: config_user_xinitrc/main.yml
