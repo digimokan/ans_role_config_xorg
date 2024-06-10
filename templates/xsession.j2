@@ -9,8 +9,16 @@
 
 # load user shell startup scripts (because xdm does not run them on user login)
 
-readonly user_login_script="/home/{{ user_name }}/.profile"
-[ -f "${user_login_script}" ] && . "${user_login_script}"
+# user login shell is zshell
+if [ -n "${ZSH_VERSION}" ] && [ -f "/home/{{ user_name }}/.zprofile" ]; then
+  . "/home/{{ user_name }}/.zprofile"
+# user login shell is bash
+elif [ -n "${BASH_VERSION}" ] && [ -f "/home/{{ user_name }}/.bash_profile" ]; then
+  . "/home/{{ user_name }}/.bash_profile"
+# user login shell is bourne or ksh
+elif [ -f "/home/{{ user_name }}/.profile" ]; then
+  . "/home/{{ user_name }}/.profile"
+fi
 
 # run user .xinitrc, which should perform the same actions as an .xsession file
 
