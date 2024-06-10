@@ -2,8 +2,9 @@
 # xorg_exec_de_or_wm: { cmd: 'mate-session', name: 'MATE Desktop'  }
 xorg_exec_de_or_wm: 'true'
 
-# key-repeat delay on holding down key (mS), and repeat rate (Hz)
-# e.g. specify '350 25' for 350 mS and 25 Hz
-# use '' to leave unset, and let DE/WM configure these settings
-xorg_key_repeat_delay_ms_rate_hz: ''
+# key-repeat delay on pressing down a key (mS)
+xorg_key_repeat_delay_ms: '660'
+
+# key repeat rate while key is held down (Hz)
+xorg_key_repeat_rate_hz: '30'
 

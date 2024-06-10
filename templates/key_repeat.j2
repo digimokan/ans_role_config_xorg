@@ -8,7 +8,7 @@
 Section "InputClass"
   Identifier "system-keyboard"
   MatchIsKeyboard "on"
-  Option "AutoRepeat" "{{ xorg_key_repeat_delay_ms_rate_hz }}"
+  Option "AutoRepeat" "{{ xorg_key_repeat_delay_ms }} {{ xorg_key_repeat_rate_hz }}"
 EndSection
 
 # vim: set filetype=conf:
