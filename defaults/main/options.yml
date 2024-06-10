@@ -8,3 +8,8 @@ xorg_key_repeat_delay_ms: '660'
 # key repeat rate while key is held down (Hz)
 xorg_key_repeat_rate_hz: '30'
 
+# optional lines to add to user ~/.Xresources file
+# xorg_xresources_lines:
+#   - { lines: "Xft.dpi: 192", descrip: 'set global monitor DPI' }
+xorg_xresources_lines: []
+
