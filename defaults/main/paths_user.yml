@@ -1,7 +1,7 @@
-# user .xinitrc path
+# user .xinitrc path (Run by startx, and by some DMs)
 xorg_user_xinitrc_path: "/home/{{ xorg_user_name }}/.xinitrc"
 
-# user .xsession path
+# user .xsession path (Run by XDM)
 xorg_user_xsession_path: "/home/{{ xorg_user_name }}/.xsession"
 
 # user .Xresources path (Xorg DB Items loaded by user .xinitrc, on startup)
