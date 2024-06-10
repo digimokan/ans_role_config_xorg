@@ -1,10 +1,6 @@
-# create user .xinitrc file, and symlink user .xsession to it
-# NOTE: user .xinitrc sources user .Xresources, .Xmodmap, .xinitrc.d/, .xprofile
-xorg_create_user_xinitrc_and_xsession: false
-
-# launch a custom DE/WM in user's .xinitrc (or empty string, for none)
-#   exec string is DE/WM executable name (e.g. 'i3')
-xorg_xinitrc_opts_exec_de: ''
+# launch a DE/WM from user's .xinitrc/.xsession (or 'true', for none)
+# xorg_exec_de_or_wm: { cmd: 'mate-session', name: 'MATE Desktop'  }
+xorg_exec_de_or_wm: 'true'
 
 # key-repeat delay on holding down key (mS), and repeat rate (Hz)
 # e.g. specify '350 25' for 350 mS and 25 Hz

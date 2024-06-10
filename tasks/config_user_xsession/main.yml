@@ -7,13 +7,4 @@
     force: true
   become: true
   become_user: root
-  when: xorg_create_user_xinitrc_and_xsession
-
-- name: "Remove any existing custom .xsession at '{{ xorg_user_xsession_path }}'"
-  ansible.builtin.file:
-    path: "{{ xorg_user_xsession_path }}"
-    state: absent
-  become: true
-  become_user: root
-  when: not xorg_create_user_xinitrc_and_xsession
 

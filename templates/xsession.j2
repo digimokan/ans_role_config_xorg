@@ -10,19 +10,19 @@
 # load user shell startup scripts (because xdm does not run them on user login)
 
 # user login shell is zshell
-if [ -n "${ZSH_VERSION}" ] && [ -f "/home/{{ user_name }}/.zprofile" ]; then
-  . "/home/{{ user_name }}/.zprofile"
+if [ -n "${ZSH_VERSION}" ] && [ -f "/home/{{ xorg_user_name }}/.zprofile" ]; then
+  . "/home/{{ xorg_user_name }}/.zprofile"
 # user login shell is bash
-elif [ -n "${BASH_VERSION}" ] && [ -f "/home/{{ user_name }}/.bash_profile" ]; then
-  . "/home/{{ user_name }}/.bash_profile"
+elif [ -n "${BASH_VERSION}" ] && [ -f "/home/{{ xorg_user_name }}/.bash_profile" ]; then
+  . "/home/{{ xorg_user_name }}/.bash_profile"
 # user login shell is bourne or ksh
-elif [ -f "/home/{{ user_name }}/.profile" ]; then
-  . "/home/{{ user_name }}/.profile"
+elif [ -f "/home/{{ xorg_user_name }}/.profile" ]; then
+  . "/home/{{ xorg_user_name }}/.profile"
 fi
 
 # run user .xinitrc, which should perform the same actions as an .xsession file
 
-readonly user_xinitrc_script="/home/{{ user_name }}/.xinitrc"
+readonly user_xinitrc_script="/home/{{ xorg_user_name }}/.xinitrc"
 [ -f "${user_xinitrc_script}" ] && . "${user_xinitrc_script}"
 
 # vim: set filetype=sh:

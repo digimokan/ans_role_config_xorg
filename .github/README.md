@@ -55,6 +55,7 @@ Install the base, minimal Xorg display server.
            name: ans_role_config_xorg
          vars:
            xorg_user_name: "user2"
+           public: true
    ```
 
 ## Role Options

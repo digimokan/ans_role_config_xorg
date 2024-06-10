@@ -17,7 +17,7 @@
 
 # read user's .Xresources file, and keep existing old resources
 
-[ -f "{{ user_xresources_path }}" ] && xrdb -merge "{{ user_xresources_path }}"
+[ -f "{{ xorg_user_xresources_path }}" ] && xrdb -merge "{{ xorg_user_xresources_path }}"
 
 ################################################################################
 # Load Keyboard Modifier Maps
@@ -29,7 +29,7 @@
 
 # read user's keyboard modifier map
 
-[ -f "{{ user_xmodmap_path }}" ] && xmodmap "{{ user_xmodmap_path }}"
+[ -f "{{ xorg_user_xmodmap_path }}" ] && xmodmap "{{ xorg_user_xmodmap_path }}"
 
 ################################################################################
 # Run Xinitrc Scripts: Tasks That Depend On Xorg
@@ -47,8 +47,8 @@ fi
 
 # run any user scripts in user xinitrc.d dir
 
-if [ -d "{{ user_xinitrc_d_dir }}" ]; then
-  for script_file in "{{ user_xinitrc_d_dir }}"/?*.sh ; do
+if [ -d "{{ xorg_user_xinitrc_d_dir }}" ]; then
+  for script_file in "{{ xorg_user_xinitrc_d_dir }}"/?*.sh ; do
     # shellcheck source=/dev/null
     [ -x "$script_file" ] && . "$script_file"
   done
@@ -67,13 +67,13 @@ fi
 # run user Xprofile commands
 
 # shellcheck source=/dev/null
-[ -f "{{ user_xprofile_path }}" ] && . "{{ user_xprofile_path }}"
+[ -f "{{ xorg_user_xprofile_path }}" ] && . "{{ xorg_user_xprofile_path }}"
 
 ################################################################################
 # Exec Target Graphical Desktop
 ################################################################################
 
-exec "{{ xinitrc_opts_exec_de if (xinitrc_opts_exec_de) else 'true' }}"
+exec "{{ xorg_exec_de_or_wm.cmd }}"
 
 # vim: set filetype=sh:
 
