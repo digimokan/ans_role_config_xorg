@@ -1,7 +1,7 @@
-- name: "Add custom .xinitrc at '{{ user_xinitrc_path }}'"
+- name: "Add custom .xsession at '{{ user_xsession_path }}'"
   ansible.builtin.template:
-    dest: "{{ user_xinitrc_path }}"
-    src: 'xinitrc.j2'
+    dest: "{{ user_xsession_path }}"
+    src: 'xsession.j2'
     owner: "{{ user_name }}"
     mode: '755'
     force: true
@@ -9,9 +9,9 @@
   become_user: root
   when: create_user_xinitrc_and_xsession
 
-- name: "Remove any existing custom .xinitrc at '{{ user_xinitrc_path }}'"
+- name: "Remove any existing custom .xsession at '{{ user_xsession_path }}'"
   ansible.builtin.file:
-    path: "{{ user_xinitrc_path }}"
+    path: "{{ user_xsession_path }}"
     state: absent
   become: true
   become_user: root

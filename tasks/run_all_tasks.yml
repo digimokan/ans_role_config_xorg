@@ -12,6 +12,9 @@
 - name: "Configure custom .xinitrc for user '{{ user_name }}'"
   ansible.builtin.include_tasks: config_user_xinitrc/main.yml
 
+- name: "Configure custom .xsession for user '{{ user_name }}'"
+  ansible.builtin.include_tasks: config_user_xsession/main.yml
+
 - name: "Configure xorg.conf.d key-repeat settings"
   ansible.builtin.include_tasks: config_key_repeat/main.yml
 
