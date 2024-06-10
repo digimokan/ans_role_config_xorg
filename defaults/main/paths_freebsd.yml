@@ -1,15 +1,15 @@
 # system Xresources file path
-freebsd_system_xresources_path: '/usr/local/etc/X11/xinit/.Xresources'
+xorg_freebsd_system_xresources_path: '/usr/local/etc/X11/xinit/.Xresources'
 
 # system Xmodmap file path
-freebsd_system_xmodmap_path: '/usr/local/etc/X11/xinit/.Xmodmap'
+xorg_freebsd_system_xmodmap_path: '/usr/local/etc/X11/xinit/.Xmodmap'
 
 # system xinitrc.d scripts directory
-freebsd_system_xinitrc_d_dir: '/usr/local/etc/X11/xinit/xinitrc.d'
+xorg_freebsd_system_xinitrc_d_dir: '/usr/local/etc/X11/xinit/xinitrc.d'
 
 # system Xprofile file path
-freebsd_system_xprofile_path: '/usr/local/etc/xprofile'
+xorg_freebsd_system_xprofile_path: '/usr/local/etc/xprofile'
 
 # system xorg.conf dir
-freebsd_system_xorg_conf_dir: '/usr/local/etc/X11/xorg.conf.d'
+xorg_freebsd_system_xorg_conf_dir: '/usr/local/etc/X11/xorg.conf.d'
 

@@ -54,7 +54,7 @@ Install the base, minimal Xorg display server.
          ansible.builtin.include_role:
            name: ans_role_config_xorg
          vars:
-           user_name: "user2"
+           xorg_user_name: "user2"
    ```
 
 ## Role Options
@@ -65,7 +65,7 @@ See the role `defaults` files for main role vars listings:
 
 Define these _required_ vars for the role:
 
-  * `user_name`: name of primary i3wm user to configure the desktop for
+  * `xorg_user_name`: name of primary Xorg user to configure the Xorg for
 
 ## Contributing
 
