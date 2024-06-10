@@ -7,11 +7,14 @@
 - name: "Install xmodmap packages required for custom user .xinitrc"
   ansible.builtin.include_tasks: install_xmodmap/main.yml
 
-- name: "Configure custom .xinitrc for user '{{ user_name }}'"
+- name: "Configure custom .xinitrc for user '{{ xorg_user_name }}'"
   ansible.builtin.include_tasks: config_user_xinitrc/main.yml
 
-- name: "Configure custom .xsession for user '{{ user_name }}'"
+- name: "Configure custom .xsession for user '{{ xorg_user_name }}'"
   ansible.builtin.include_tasks: config_user_xsession/main.yml
+
+- name: "Configure custom .Xresources for user '{{ xorg_user_name }}'"
+  ansible.builtin.include_tasks: config_user_xresources/main.yml
 
 - name: "Configure xorg.conf.d key-repeat settings"
   ansible.builtin.include_tasks: config_key_repeat/main.yml

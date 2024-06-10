@@ -1,0 +1,10 @@
+- name: "Add custom .Xresources at '{{ xorg_user_xresources_path }}'"
+  ansible.builtin.template:
+    dest: "{{ xorg_user_xresources_path }}"
+    src: 'xresources.j2'
+    owner: "{{ xorg_user_name }}"
+    mode: '644'
+    force: true
+  become: true
+  become_user: root
+

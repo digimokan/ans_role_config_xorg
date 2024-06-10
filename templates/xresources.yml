@@ -1,0 +1,14 @@
+! vim: set filetype=xdefaults:
+! ANSIBLE-MANAGED CONFIGURATION FILE
+! NOTES:
+!   - Sourced manually in user .xinitrc, and by system xinitrc
+!   - May also be sourced manually by user .xsession file
+!   - The manual sourcing is done with xrdb [-merge] ~/.Xresources
+!   - View currently-loaded Xresources with 'xrdb -query -all'
+! REFS:
+!   - See https://www.freebsd.org/cgi/man.cgi?query=xrdb
+
+{% for resource in xorg_xresources_lines %}
+{{ '! ' }}{{ resource.descrip }}
+{{ resource.lines }}
+{% endfor %}
