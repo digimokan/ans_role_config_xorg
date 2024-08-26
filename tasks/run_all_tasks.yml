@@ -1,6 +1,9 @@
 - name: "Install base Xorg packages"
   ansible.builtin.include_tasks: install_xorg/main.yml
 
+- name: "Export vars for other roles"
+  ansible.builtin.include_tasks: export_vars/main.yml
+
 - name: "Install xrdb packages required for custom user .xinitrc"
   ansible.builtin.include_tasks: install_xrdb/main.yml
 
@@ -15,7 +18,4 @@
 
 - name: "Configure xorg.conf.d key-repeat settings"
   ansible.builtin.include_tasks: config_key_repeat/main.yml
-
-- name: "Export vars for other roles"
-  ansible.builtin.include_tasks: export_vars/main.yml
 
