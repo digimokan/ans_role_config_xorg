@@ -10,9 +10,6 @@
 - name: "Configure custom .xinitrc for user '{{ xorg_user_name }}'"
   ansible.builtin.include_tasks: config_user_xinitrc/main.yml
 
-- name: "Configure custom .xsession for user '{{ xorg_user_name }}'"
-  ansible.builtin.include_tasks: config_user_xsession/main.yml
-
 - name: "Configure custom .Xresources for user '{{ xorg_user_name }}'"
   ansible.builtin.include_tasks: config_user_xresources/main.yml
 

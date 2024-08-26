@@ -1,0 +1,3 @@
+# user .xinitrc path (Run by startx, and by some DMs)
+xorg_user_xinitrc_path: "/home/{{ xorg_user_name }}/.xinitrc"
+

@@ -53,19 +53,24 @@ Install the base, minimal Xorg display server.
        - name: "Install and configure Xorg"
          ansible.builtin.include_role:
            name: ans_role_config_xorg
+           public: true
          vars:
            xorg_user_name: "user2"
    ```
 
 ## Role Options
 
-See the role `defaults` files for main role vars listings:
+Vars that must be defined when including the role in the playbook:
 
-  * [defaults](../defaults/main/)
+  * [dependencies](../defaults/main/dependencies/main.yml)
 
-Define these _required_ vars for the role:
+Vars with default values, which can be overridden in the playbook:
 
-  * `xorg_user_name`: name of primary Xorg user to configure the Xorg for
+  * [overridable](../defaults/main/overridable)
+
+Vars defined by this role, exported with `public: true`, for use in other roles:
+
+  * [export](../defaults/main/export/paths_user.yml)
 
 ## Contributing
 
