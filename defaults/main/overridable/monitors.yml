@@ -1,0 +1,15 @@
+# Specify layout and resolutions for all monitors.
+# Leave array empty to settle for Xorg defaults.
+#   -> id:         see output names from running xrandr
+#   -> resolution: select an available 'NNNNxNNNN' line from xrandr output
+#   -> position:
+#     * 'Primary'
+#     * 'LeftOf [id]'
+#     * 'RightOf [id]'
+#     * 'Above [id]'
+#     * 'Below [id]'
+xorg_monitors_layout_and_resolutions: []
+# xorg_monitors_layout_and_resolutions:
+#   - { id: 'DVI-0', resolution: 'default', position: 'Primary' }
+#   - { id: 'DVI-1', resolution: '3840x2160', position: 'RightOf DVI-0' }
+

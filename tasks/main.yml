@@ -6,7 +6,8 @@
     system_xmodmap_path: "{{ xorg_linux_system_xmodmap_path }}"
     system_xinitrc_d_dir: "{{ xorg_linux_system_xinitrc_d_dir }}"
     system_xprofile_path: "{{ xorg_linux_system_xprofile_path }}"
-    system_xorg_conf_dir: "{{ xorg_linux_system_xorg_conf_dir }}"
+    system_xorg_monitors_conf_path: "{{ xorg_linux_system_xorg_conf_dir }}/{{ xorg_conf_monitors_file_name }}"
+    system_xorg_key_repeat_conf_path: "{{ xorg_linux_system_xorg_conf_dir }}/{{ xorg_conf_key_repeat_file_name }}"
   when: ansible_distribution == "Ubuntu"
 
 - name: "Run all role tasks for Arch Linux"
@@ -17,7 +18,8 @@
     system_xmodmap_path: "{{ xorg_linux_system_xmodmap_path }}"
     system_xinitrc_d_dir: "{{ xorg_linux_system_xinitrc_d_dir }}"
     system_xprofile_path: "{{ xorg_linux_system_xprofile_path }}"
-    system_xorg_conf_dir: "{{ xorg_linux_system_xorg_conf_dir }}"
+    system_xorg_monitors_conf_path: "{{ xorg_linux_system_xorg_conf_dir }}/{{ xorg_conf_monitors_file_name }}"
+    system_xorg_key_repeat_conf_path: "{{ xorg_linux_system_xorg_conf_dir }}/{{ xorg_conf_key_repeat_file_name }}"
   when: ansible_os_family == "Archlinux"
 
 - name: "Run all role tasks for FreeBSD"
@@ -28,6 +30,7 @@
     system_xmodmap_path: "{{ xorg_freebsd_system_xmodmap_path }}"
     system_xinitrc_d_dir: "{{ xorg_freebsd_system_xinitrc_d_dir }}"
     system_xprofile_path: "{{ xorg_freebsd_system_xprofile_path }}"
-    system_xorg_conf_dir: "{{ xorg_freebsd_system_xorg_conf_dir }}"
+    system_xorg_monitors_conf_path: "{{ xorg_freebsd_system_xorg_conf_dir }}/{{ xorg_conf_monitors_file_name }}"
+    system_xorg_key_repeat_conf_path: "{{ xorg_freebsd_system_xorg_conf_dir }}/{{ xorg_conf_key_repeat_file_name }}"
   when: ansible_os_family == "FreeBSD"
 

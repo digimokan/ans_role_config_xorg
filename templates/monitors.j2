@@ -1,0 +1,20 @@
+# ANSIBLE-MANAGED CONFIGURATION FILE
+# NOTES:
+#   - This method of monitor config is an alternative to xrandr run on CLI.
+# REFS:
+#   - https://wiki.archlinux.org/title/Multihead#Configuration_using_xorg.conf
+#   - https://www.x.org/releases/current/doc/man/man5/xorg.conf.5.xhtml#heading12
+
+{% for monitor in xorg_monitors_layout_and_resolutions %}
+{% set id = monitor.id %}
+{% set pos = monitor.pos.split(' ') %}
+{% set res = monitor.resolution %}
+Section "Monitor"
+  Identifier "{{ id }}"
+  {{ 'Option "' ~ ('Primary" "true' if (pos[0] == 'Primary') else (pos[0] ~ '" "' ~ pos[1])) ~ '"' }}
+  {{ '# (use default resolution)' if (res == 'default') else ('Option "PreferredMode" "' ~ res ~ '"') }}
+EndSection
+
+{% endfor %}
+# vim: set filetype=conf:
+

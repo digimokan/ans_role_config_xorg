@@ -1,0 +1,19 @@
+- name: "Set monitors layout and resolutions in '{{ system_xorg_monitors_conf_path }}'"
+  ansible.builtin.template:
+    dest: "{{ system_xorg_monitors_conf_path }}"
+    src: 'monitors.j2'
+    owner: 'root'
+    mode: '644'
+    force: true
+  become: true
+  become_user: root
+  when: xorg_monitors_layout_and_resolutions.length > 0
+
+- name: "Remove any existing '{{ system_xorg_monitors_conf_path }}' (use xorg monitor defaults)"
+  ansible.builtin.file:
+    path: "{{ system_xorg_monitors_conf_path }}"
+    state: absent
+  become: true
+  become_user: root
+  when: xorg_monitors_layout_and_resolutions.length == 0
+

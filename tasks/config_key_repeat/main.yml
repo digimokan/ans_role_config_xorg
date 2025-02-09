@@ -1,12 +1,10 @@
-- name: "Add system key-repeat settings in '{{ key_repeat_conf_path }}'"
+- name: "Set system key-repeat settings in '{{ system_xorg_key_repeat_conf_path }}'"
   ansible.builtin.template:
-    dest: "{{ key_repeat_conf_path }}"
+    dest: "{{ system_xorg_key_repeat_conf_path }}"
     src: 'key_repeat.j2'
     owner: 'root'
     mode: '644'
     force: true
   become: true
   become_user: root
-  vars:
-    key_repeat_conf_path: "{{ system_xorg_conf_dir }}/{{ xorg_conf_key_repeat_file_name }}"
 
