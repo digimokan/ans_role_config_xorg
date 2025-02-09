@@ -1,3 +1,9 @@
+# package names to install for FreeBSD
+xorg_freebsd_package_names:
+  - 'xorg-minimal'
+  - 'xrdb'
+  - 'xmodmap'
+
 # system Xresources file path
 xorg_freebsd_system_xresources_path: '/usr/local/etc/X11/xinit/.Xresources'
 

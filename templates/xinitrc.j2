@@ -73,7 +73,7 @@ fi
 # Exec Target Graphical Desktop
 ################################################################################
 
-exec "{{ xorg_exec_de_or_wm.cmd }}"
+exec "{{ xorg_exec_de_or_wm.cmd if (xorg_exec_de_or_wm != '') else 'true' }}"
 
 # vim: set filetype=sh:
 

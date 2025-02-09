@@ -1,0 +1,6 @@
+# key-repeat delay on pressing down a key (mS)
+xorg_key_repeat_delay_ms: '660'
+
+# key repeat rate while key is held down (Hz)
+xorg_key_repeat_rate_hz: '30'
+

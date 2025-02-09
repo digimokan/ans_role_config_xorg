@@ -1,7 +1,0 @@
-- name: "Install 'xrdb' package"
-  ansible.builtin.package:
-    name: xrdb
-    state: present
-  become: true
-  become_user: root
-

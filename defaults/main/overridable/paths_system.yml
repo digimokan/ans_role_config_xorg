@@ -1,3 +1,0 @@
-# xorg.conf.d key-repeat config filename
-xorg_conf_key_repeat_file_name: '00-key_repeat.conf'
-

@@ -1,14 +1,8 @@
-- name: "Install base Xorg packages"
-  ansible.builtin.include_tasks: install_xorg/main.yml
-
 - name: "Export vars for other roles"
   ansible.builtin.include_tasks: export_vars/main.yml
 
-- name: "Install xrdb packages required for custom user .xinitrc"
-  ansible.builtin.include_tasks: install_xrdb/main.yml
-
-- name: "Install xmodmap packages required for custom user .xinitrc"
-  ansible.builtin.include_tasks: install_xmodmap/main.yml
+- name: "Install all Xorg packages"
+  ansible.builtin.include_tasks: install/main.yml
 
 - name: "Configure custom .xinitrc for user '{{ xorg_user_name }}'"
   ansible.builtin.include_tasks: config_user_xinitrc/main.yml

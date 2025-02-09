@@ -1,0 +1,6 @@
+# package names to install for Arch Linux
+xorg_archlinux_package_names:
+  - 'xorg-server'
+  - 'xorg-xrdb'
+  - 'xorg-xmodmap'
+

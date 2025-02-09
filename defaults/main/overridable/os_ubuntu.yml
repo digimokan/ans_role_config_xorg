@@ -1,0 +1,4 @@
+# package names to install for Ubuntu
+xorg_ubuntu_package_names:
+  - 'xorg'
+

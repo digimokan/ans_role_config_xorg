@@ -1,0 +1,4 @@
+# launch a DE/WM from user's .xinitrc/.xsession
+# xorg_exec_de_or_wm: { cmd: 'mate-session', name: 'MATE Desktop'  }
+xorg_exec_de_or_wm: ''
+

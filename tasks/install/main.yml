@@ -1,0 +1,7 @@
+- name: "Install packages for base xorg, and to support custom user .xinitrc"
+  ansible.builtin.package:
+    name: "{{ xorg_package_names }}"
+    state: present
+  become: true
+  become_user: root
+
