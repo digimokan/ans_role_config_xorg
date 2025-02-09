@@ -7,7 +7,7 @@
     force: true
   become: true
   become_user: root
-  when: xorg_monitors_layout_and_resolutions.length > 0
+  when: (xorg_monitors_layout_and_resolutions | length) > 0
 
 - name: "Remove any existing '{{ system_xorg_monitors_conf_path }}' (use xorg monitor defaults)"
   ansible.builtin.file:
@@ -15,5 +15,5 @@
     state: absent
   become: true
   become_user: root
-  when: xorg_monitors_layout_and_resolutions.length == 0
+  when: (xorg_monitors_layout_and_resolutions | length) == 0
 
