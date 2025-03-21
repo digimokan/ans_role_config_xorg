@@ -1,6 +1,9 @@
 # xorg.conf.d monitors config filename
 xorg_conf_monitors_file_name: '10-monitor.conf'
 
+# xorg.conf.d video card config filename
+xorg_conf_video_card_file_name: '20-graphics-card.conf'
+
 # xorg.conf.d key-repeat config filename
 xorg_conf_key_repeat_file_name: '00-key_repeat.conf'
 

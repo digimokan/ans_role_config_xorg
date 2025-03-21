@@ -1,0 +1,11 @@
+# for external (not on motherboard) cards like AMD/Nvidia, specify card number
+# On FreeBSD, use "pciconf -lv | grep -B3 display", look for e.g. "vgapci0"
+# Specify as one-digit card number "0", "1", etc
+xorg_external_video_card_number: "none"
+
+# for external (not on motherboard) cards like AMD/Nvidia, specify card bus
+# On FreeBSD, use "pciconf -lv | grep -B3 display", look for e.g. "pci0:1:0:0"
+# Also refer to example config output from "Xorg -configure"
+# Specify as three-digit bus number "1:0:0", etc
+xorg_external_video_card_bus: "none"
+

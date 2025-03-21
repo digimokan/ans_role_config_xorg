@@ -1,0 +1,25 @@
+- name: "Abort if external video card number is set, but not external video card bus"
+  ansible.builtin.fail:
+    msg: "xorg_external_video_card_bus var must be specified along with xorg_external_video_card_number"
+  when: (xorg_external_video_card_bus == 'none') and
+        (xorg_external_video_card_number != 'none')
+
+- name: "Set video card number and bus in '{{ system_xorg_video_card_conf_path }}'"
+  ansible.builtin.template:
+    dest: "{{ system_xorg_video_card_conf_path }}"
+    src: 'video_card.j2'
+    owner: 'root'
+    mode: '644'
+    force: true
+  become: true
+  become_user: root
+  when: xorg_external_video_card_number != "none"
+
+- name: "Remove any existing '{{ system_xorg_video_card_conf_path }}' (use video card on motherboard)"
+  ansible.builtin.file:
+    path: "{{ system_xorg_video_card_conf_path }}"
+    state: absent
+  become: true
+  become_user: root
+  when: xorg_external_video_card_number == "none"
+

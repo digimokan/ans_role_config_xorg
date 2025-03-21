@@ -10,6 +10,9 @@
 - name: "Configure custom .Xresources for user '{{ xorg_user_name }}'"
   ansible.builtin.include_tasks: config_user_xresources/main.yml
 
+- name: "Configure xorg.conf.d external graphics card number/bus"
+  ansible.builtin.include_tasks: config_video_card/main.yml
+
 - name: "Configure xorg.conf.d monitors layout and resolutions"
   ansible.builtin.include_tasks: config_monitors/main.yml
 

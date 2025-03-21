@@ -1,0 +1,14 @@
+# ANSIBLE-MANAGED CONFIGURATION FILE
+# NOTES:
+#   - Specify card number and bus for external graphics cards
+# REFS:
+#   - https://docs.freebsd.org/en/books/handbook/x11/#x-config-video-cards
+
+Section "Device"
+  Identifier "Card{{ xorg_external_video_card_number }}"
+  Driver "modesetting"
+  BusID "PCI:{{ xorg_external_video_card_bus }}"
+EndSection
+
+# vim: set filetype=conf:
+
