@@ -15,6 +15,12 @@ Section "Monitor"
   {{ '# (use default resolution)' if (res == 'default') else ('Option "PreferredMode" "' ~ res ~ '"') }}
 EndSection
 
+Section "Screen"
+  Identifier "Screen_{{ id }}"
+  Device "Card{{ xorg_external_video_card_number }}"
+  Monitor "{{ id }}"
+EndSection
+
 {% endfor %}
 # vim: set filetype=conf:
 
